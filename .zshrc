@@ -47,12 +47,6 @@ else
 fi 
 } 
 
-alert() {
-google-chrome alrt.io/"$*"
-}
-
-say() { if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
-
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -81,3 +75,13 @@ export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
 export EDITOR='emacs -nw'
+
+#Cool fun
+alert() {
+#Call alert 1h1m1s to set a 1 hour 1 min 1 second timer.
+google-chrome alrt.io/"$*"
+}
+
+say() { 
+#call say string to have it repeat the string back to you using google translate.
+if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
