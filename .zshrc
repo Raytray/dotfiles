@@ -81,6 +81,7 @@ export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
 export EDITOR='emacs -nw'
+alias emacs='emacs -nw'
 source /home/raytray/Dropbox/Configs/.zprofile
 
 #Cool fun
