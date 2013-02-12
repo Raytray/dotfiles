@@ -51,13 +51,19 @@ fi
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 alias ls='ls --color=auto -CF'
+
+#ssh into personal server.
 alias raypi='ssh -p 8081 raytray@ray.7ang.me'
-alias emacs='emacs -nw'
-alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
 alias piirssi='ssh -p 8081 raytray@ray.7ang.me -t screen -dr rayirssi'
-alias ec2="ssh ubuntu@ec2-50-17-59-225.compute-1.amazonaws.com"
+
+alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
+
+#Grep running processes
 alias psg='ps ax|grep '
+
+#Grep through history
 alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
+
 alias cd=cdls
 alias alert=alert()
 
