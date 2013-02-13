@@ -64,6 +64,7 @@ alias psg='ps ax|grep '
 #Grep through history
 alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
+alias emacs='emacs -nw'
 alias cd=cdls
 alias alert=alert()
 
@@ -81,7 +82,6 @@ export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
 export EDITOR='emacs -nw'
-alias emacs='emacs -nw'
 source /home/raytray/Dropbox/Configs/.zprofile
 
 #Cool fun
