@@ -56,15 +56,12 @@ alias ls='ls --color=auto -CF'
 alias raypi='ssh -p 8081 raytray@ray.7ang.me'
 alias piirssi='ssh -p 8081 raytray@ray.7ang.me -t screen -dr rayirssi'
 
-alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
-
 #Grep running processes
 alias psg='ps ax|grep '
 
 #Grep through history
 alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
-alias emacs='emacs -nw'
 alias cd=cdls
 alias alert=alert()
 
@@ -81,6 +78,7 @@ export PATH=$PATH:/opt/vagrant/bin
 export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
+alias emacs='emacs -nw'
 export EDITOR='emacs -nw'
 source /home/raytray/Dropbox/Configs/.zprofile
 
