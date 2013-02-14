@@ -7,24 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gurgeh"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
- COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -36,16 +21,16 @@ setopt no_share_history
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*   
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #Credit to Nishant 'BinRoot' Shukla.
-cdls() { 
-if [ -z "$1" ]; then 
-  cd && ls --color=auto -CF
-else 
-  cd "$*" && ls --color=auto -CF
-fi 
-} 
+cdls() {
+    if [ -z "$1" ]; then
+	cd && ls --color=auto -CF
+    else
+	cd "$*" && ls --color=auto -CF
+    fi
+}
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -78,16 +63,15 @@ export PATH=$PATH:/opt/vagrant/bin
 export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
-alias emacs='emacs -nw'
 export EDITOR='emacs -nw'
 source /home/raytray/Dropbox/Configs/.zprofile
 
 #Cool fun
 alert() {
 #Call alert 1h1m1s to set a 1 hour 1 min 1 second timer.
-google-chrome alrt.io/"$*"
+    google-chrome alrt.io/"$*"
 }
 
-say() { 
+say() {
 #call say string to have it repeat the string back to you using google translate.
-if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
+    if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
