@@ -47,6 +47,8 @@ alias psg='ps ax|grep '
 #Grep through history
 alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
+alias fliptable="echo '(╯°□°）╯︵ ┻━┻'" #Will make a function that animates another time.
+
 alias cd=cdls
 alias alert=alert()
 
