@@ -49,9 +49,6 @@ alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
 alias fliptable="echo '(╯°□°）╯︵ ┻━┻'" #Will make a function that animates another time.
 
-alias cd=cdls
-alias alert=alert()
-
 #Virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development/Parsely/
@@ -65,6 +62,7 @@ export PATH=$PATH:/opt/vagrant/bin
 export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
+alias emacs='emacs -nw'
 export EDITOR='emacs -nw'
 source /home/raytray/Dropbox/Configs/.zprofile
 
@@ -77,3 +75,5 @@ alert() {
 say() {
 #call say string to have it repeat the string back to you using google translate.
     if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
+
+alias cd=cdls
