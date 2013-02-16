@@ -4,7 +4,8 @@
 (load "jinja")
 (load "php-mode")
 (load "markdown-mode")
-(local-set-key "\C-c\C-c" 'compile)
+(require 'git-commit)
+(add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 
 ;;python on buffer
 (defun python-interpret()
