@@ -49,8 +49,13 @@ alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
 sleep 1
-echo -ne '(╯°□°）╯︵ ┻━┻       \r'
+echo -ne '           (╯°□°）╯︵ ┻━┻           \r'
 sleep 1
+echo -ne '           (ノ°Д°)ノ  ︵  ┬─┬       \r'
+sleep 1
+echo -ne '           (ノ°□°)ノ   ︵     ┻━┻   \r'
+sleep 1
+echo -ne '     ┻━┻︵╰(°Д°)╯︵┻━┻              \r'
 echo -ne '\n'"
 
 #Virtualenv
