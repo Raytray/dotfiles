@@ -1,7 +1,10 @@
 (setq-default linum-format "%d ")
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
+(add-to-list 'load-path "~/.emacs.d/plugins/deft")
+(add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
 (load "jinja")
+(load "markdown-mode")
 (require 'git-commit)
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
 
@@ -19,6 +22,7 @@
 (setq compilation-scroll-output t)
 
 ;;deft
+(load "deft")
 (setq deft-extension "md")
 (setq deft-use-filename-as-title t)
 (setq deft-auto-save-interval 0)
