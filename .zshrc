@@ -53,9 +53,9 @@ echo -ne '           (╯°□°）╯︵ ┻━┻           \r'
 sleep 1
 echo -ne '           (ノ°Д°)ノ  ︵  ┬─┬       \r'
 sleep 1
-echo -ne '           (ノ°□°)ノ   ︵     ┻━┻   \r'
+echo -ne '           (ノ°□°)ノ   ︵   ︵  ┻━┻ \r'
 sleep 1
-echo -ne '     ┻━┻︵╰(°Д°)╯︵┻━┻              \r'
+echo -ne '     ┻━ ︵╰(°Д°)╯︵ ━┻              \r'
 echo -ne '\n'"
 
 #Virtualenv
