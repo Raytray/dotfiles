@@ -3,10 +3,10 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins/git-commit-mode")
 (load "jinja")
 (load "markdown-mode")
-(require 'git-commit)
-(add-hook 'git-commit-mode-hook 'turn-on-flyspell)
+(load "git-commit")
 
 ;;Adding marmalade package repo
 (require 'package)
