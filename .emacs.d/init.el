@@ -2,10 +2,14 @@
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (load "jinja")
-(load "php-mode")
-(load "markdown-mode")
 (require 'git-commit)
 (add-hook 'git-commit-mode-hook 'turn-on-flyspell)
+
+;;Adding marmalade package repo
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 ;;python on buffer
 (defun python-interpret()
@@ -15,7 +19,6 @@
 (setq compilation-scroll-output t)
 
 ;;deft
-(load "deft")
 (setq deft-extension "md")
 (setq deft-use-filename-as-title t)
 (setq deft-auto-save-interval 0)
