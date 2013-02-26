@@ -3,6 +3,9 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
+(setq auto-mode-alist 
+      (cons '("\\.md" . markdown-mode) auto-mode-alist)
+      )
 (add-to-list 'load-path "~/.emacs.d/plugins/git-commit-mode")
 (load "jinja")
 (load "markdown-mode")
