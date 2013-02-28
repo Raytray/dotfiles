@@ -7,7 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ray"
 
-
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
@@ -18,7 +17,6 @@ plugins=(pip zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 setopt no_share_history
-
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -65,9 +63,6 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 #vagrant
 export PATH=$PATH:/opt/vagrant/bin
-
-#wrk
-export PATH=$PATH:/opt/wrk/bin
 
 #emacs as default editor
 alias emacs='emacs -nw'
