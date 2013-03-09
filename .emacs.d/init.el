@@ -6,10 +6,8 @@
 (setq auto-mode-alist 
       (cons '("\\.md" . markdown-mode) auto-mode-alist)
       )
-(add-to-list 'load-path "~/.emacs.d/plugins/git-commit-mode")
 (load "jinja")
 (load "markdown-mode")
-(load "git-commit")
 
 ;;Adding marmalade package repo
 (require 'package)

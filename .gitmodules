@@ -4,9 +4,6 @@
 [submodule ".emacs.d/plugins/deft"]
 	path = .emacs.d/plugins/deft
 	url = http://jblevins.org/git/deft.git
-[submodule ".emacs.d/plugins/git-commit-mode"]
-	path = .emacs.d/plugins/git-commit-mode
-	url = https://github.com/Raytray/git-commit-mode.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:Raytray/oh-my-zsh.git
