@@ -8,19 +8,8 @@
       )
 (load "jinja")
 (load "markdown-mode")
-
-;;Adding marmalade package repo
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
-
-;;python on buffer
-(defun python-interpret()
-  "Run python on buffer"
-  (interactive)
-  (compile (concat "python " (buffer-name))))
-(setq compilation-scroll-output t)
+(load "git-commit")
+(require 'magit)
 
 ;;deft
 (load "deft")
@@ -54,8 +43,3 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
-
-(add-hook 'html-mode-hook
-          (lambda()
-            (setq sgml-basic-offset 4)
-            (setq indent-tabs-mode t)))
