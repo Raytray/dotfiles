@@ -9,7 +9,6 @@
 (load "jinja")
 (load "markdown-mode")
 (load "git-commit")
-(require 'magit)
 
 ;;deft
 (load "deft")
@@ -48,3 +47,9 @@
 	  (lambda()
             (setq sgml-basic-offset 4)
             (setq indent-tabs-mode t)))
+
+(require 'package)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
