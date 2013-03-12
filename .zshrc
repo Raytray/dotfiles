@@ -17,6 +17,7 @@ plugins=(pip zsh-syntax-highlighting git-extras)
 source $ZSH/oh-my-zsh.sh
 
 setopt no_share_history
+unsetopt correct_all
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
