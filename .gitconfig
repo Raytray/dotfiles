@@ -44,3 +44,5 @@
 	autosetuprebase = always
 [pull]
 	rebase = true
+[push]
+	default = simple
