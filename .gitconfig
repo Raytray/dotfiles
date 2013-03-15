@@ -10,9 +10,10 @@
 	dw = diff --word-diff
 	fa = fetch --all
 	la = !git config -l | grep alias | cut -c 7-
-	ll = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
 	lg = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
+	ll = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
 	ls = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
+	lsf = ls-files
 	rp = !git rebase -i @{u} && git push
 	ss = status -sb
 [merge]
