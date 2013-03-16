@@ -46,6 +46,24 @@ alias psg='ps ax|grep '
 #Grep through history
 alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 
+#Open email compose window with attachment
+alias write-email=write-email-fn
+write-email-fn() {
+    #Finish this, allow it to attach up to any number of arguments. Get the count and just do `pwd`/$#
+    if [ -z "$1" ]; then
+	`thunderbird -compose`
+    else
+	thePWD=`pwd`
+	for var in $@; do
+	    attachment=$attachment','$thePWD'/'$var
+	done
+	unset "thePWD"
+	attachment=`echo $attachment | cut -c 2-`
+	`thunderbird -compose "attachment='$attachment'"`
+	unset "attachment"
+    fi
+}
+
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
 sleep 1
 echo -ne '           (╯°□°）╯︵ ┻━┻           \r'
