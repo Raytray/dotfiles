@@ -36,9 +36,16 @@
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
 
-(setq-default c-basic-offset 4
-              tab-width 4
-              indent-tabs-mode t)
+;; 4 spaces to a tab.
+(setq-default c-basic-offset 4)
+(setq-default python-indent 4)
+(setq tab-width 4)
+(setq tab-stop-list (number-sequence 4 200 4))
+(setq indent-tabs-mode nil)    
+(add-hook 'html-mode-hook
+        (lambda ()
+          ;; Default indentation is usually 2 spaces, changing to 4.
+          (set (make-local-variable 'sgml-basic-offset) 4)))
 
 (require 'package)
 (add-to-list 'package-archives 
