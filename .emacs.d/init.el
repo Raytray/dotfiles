@@ -36,17 +36,9 @@
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))))
-
-(add-hook 'html-mode-hook
-	  (lambda()
-            (setq sgml-basic-offset 4)
-            (setq indent-tabs-mode t)))
+(setq-default c-basic-offset 4
+              tab-width 4
+              indent-tabs-mode t)
 
 (require 'package)
 (add-to-list 'package-archives 
