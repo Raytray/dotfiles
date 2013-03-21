@@ -39,6 +39,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 alias ls='ls --color=auto -CF'
 
+#alias for defaulting on metric reports for the weather-util program.
+alias weather='weather --metric --alert'
+
+#alias for youtube-dl to use title as filenames by default.
+alias youtube-dl='youtube-dl -t'
+
 #ssh into personal server.
 alias raypi='ssh -p 8081 raytray@ray.7ang.me'
 alias piirssi='ssh -p 8081 raytray@ray.7ang.me -t screen -dr rayirssi'
