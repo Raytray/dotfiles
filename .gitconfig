@@ -1,49 +1,53 @@
-[user]
-	name = Raymond Tang
-	email = Raymond@tang.me
-[credential]
-	helper = cache
-[core]
-	excludesfile = /home/raytray/.gitignore_global
 [alias]
-	cv = commit --verbose
-	dw = diff --word-diff
-	fa = fetch --all
-	la = !git config -l | grep alias | cut -c 7-
-	lg = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
-	ll = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
-	ls = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
-	lsf = ls-files
-	rp = !git rebase -i @{u} && git push
-	ss = status -sb
-[merge]
-        tool = mymeld
-[mergetool "mymeld"]
-    	cmd = /home/raytray/Dropbox/Configs/mergetool.sh $BASE $LOCAL $REMOTE $MERGED
-[github]
-	user = Raytray
-[gist]
-	private = no
-[color]
-	branch = auto
-	diff = auto
-	status = auto
-	interactive = auto
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-[color "diff"]
-       	whitespace = red reverse
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    cv = commit --verbose
+    dw = diff --word-diff
+    fa = fetch --all
+    la = !git config -l | grep alias | cut -c 7-
+    lg = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
+    ll = log --pretty=format:'%C(bold blue)%H%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
+    lls = log --pretty=format:'%C(bold blue)%H%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=short
+    ls = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
+    lsf = ls-files
+    lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
+    rp = !git rebase -i @{u} && git push
+    ss = status -sb
+[branch]
+    autosetuprebase = always
 [branch "master"]
 	rebase = true
-[branch]
-	autosetuprebase = always
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+[color "branch"]
+       current = yellow reverse
+       local = yellow
+       remote = green
+[color "diff"]
+       whitespace = red reverse
+[color "status"]
+       added = yellow
+       changed = green
+       untracked = cyan
+[core]
+    excludesfile = /home/raytray/.gitignore_global
+[credential]
+    helper = cache
+[fetch]
+    recurseSubmodules = true
+[gist]
+    private = no
+[github]
+    user = Raytray
+[merge]
+    tool = mymeld
+[mergetool "mymeld"]
+    cmd = /home/raytray/Dropbox/Configs/mergetool.sh $BASE $LOCAL $REMOTE $MERGED
 [pull]
-	rebase = true
+    rebase = true
 [push]
-	default = simple
+    default = simple
+[user]
+    name = Raymond Tang
+    email = Raymond@tang.me
