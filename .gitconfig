@@ -1,6 +1,7 @@
 [alias]
     cv = commit --verbose
-    dw = diff --color-words
+    diff = diff --patience
+    dw = diff --color-words --patience
     fa = fetch --all
     la = !git config -l | grep alias | cut -c 7-
     lgr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
