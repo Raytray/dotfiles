@@ -58,7 +58,6 @@ alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 #Open email compose window with attachment
 alias write-email=write-email-fn
 write-email-fn() {
-    #Finish this, allow it to attach up to any number of arguments. Get the count and just do `pwd`/$#
     if [ -z "$1" ]; then
 	`thunderbird -compose`
     else
@@ -71,6 +70,11 @@ write-email-fn() {
 	`thunderbird -compose "attachment='$attachment'"`
 	unset "attachment"
     fi
+}
+
+alias calc=calc-fn #Have to escape for special characters such as ^, *, \
+calc-fn() {
+    echo "$*" | bc
 }
 
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
