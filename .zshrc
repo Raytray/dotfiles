@@ -71,10 +71,33 @@ write-email-fn() {
 	unset "attachment"
     fi
 }
+#credit to alrra
+calc() {
 
-alias calc=calc-fn #Have to escape for special characters such as ^, *, \
-calc-fn() {
-    echo "$*" | bc
+    local result=""
+
+    result="$( printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n' )"
+    #                       └─ default (when `--mathlib` is used) is 20
+    #
+    if [[ "$result" == *.* ]]; then
+        # improve the output for decimal numbers
+        printf "$result" |
+        sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+            -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+            -e 's/0*$//;s/\.$//'   # remove tailing zeros
+    else
+        printf "$result"
+    fi
+
+    printf "\n"}
+
+#Fahrenheit to Celsius
+f2c(){
+    calc "($1 - 32.0) * 5.0 / 9.0"
+}
+#Celsius to Fahrenheit
+c2f(){
+    calc "$1 * 9.0 / 5.0 + 32.0"
 }
 
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
