@@ -95,9 +95,20 @@ calc() {
 f2c(){
     calc "($1 - 32.0) * 5.0 / 9.0"
 }
+
 #Celsius to Fahrenheit
 c2f(){
     calc "$1 * 9.0 / 5.0 + 32.0"
+}
+
+#Copy file or string to clipboard.
+clipboard(){
+    if [ -e $1 ]
+    then
+	cat $1 | xclip -selection clipboard
+    else
+	echo $* | xclip -selection clipboard
+    fi
 }
 
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
