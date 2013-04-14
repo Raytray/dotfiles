@@ -111,6 +111,14 @@ clipboard(){
     fi
 }
 
+#Google given string
+google(){
+    searchTerm=`echo $* | sed -e 's/ /\+/g'`
+    searchTerm='https://www.google.com/search?q='$searchTerm
+    google-chrome $searchTerm
+    unset 'searchTerm'
+}
+
 alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
 sleep 1
 echo -ne '           (╯°□°）╯︵ ┻━┻           \r'
