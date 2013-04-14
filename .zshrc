@@ -59,7 +59,7 @@ alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
 alias write-email=write-email-fn
 write-email-fn() {
     if [ -z "$1" ]; then
-	`thunderbird -compose`
+	thunderbird -compose
     else
 	thePWD=`pwd`
 	for var in $@; do
@@ -67,7 +67,7 @@ write-email-fn() {
 	done
 	unset "thePWD"
 	attachment=`echo $attachment | cut -c 2-`
-	`thunderbird -compose "attachment='$attachment'"`
+	thunderbird -compose "attachment='$attachment'"
 	unset "attachment"
     fi
 }
@@ -77,19 +77,15 @@ calc() {
     local result=""
 
     result="$( printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n' )"
-    #                       └─ default (when `--mathlib` is used) is 20
-    #
     if [[ "$result" == *.* ]]; then
         # improve the output for decimal numbers
-        printf "$result" |
-        sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-            -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-            -e 's/0*$//;s/\.$//'   # remove tailing zeros
+        printf "$result" | sed -e 's/^\./0./' -e 's/^-\./-0./' -e 's/0*$//;s/\.$//'
     else
         printf "$result"
     fi
 
-    printf "\n"}
+    printf "\n"
+}
 
 #Fahrenheit to Celsius
 f2c(){
