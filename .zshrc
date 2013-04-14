@@ -36,6 +36,7 @@ cdls() {
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+source /home/raytray/Dropbox/Configs/.zprofile
 
 alias ls='ls --color=auto -CF'
 
@@ -45,16 +46,11 @@ alias weather='weather --metric --alert'
 #alias for youtube-dl to use title as filenames by default.
 alias youtube-dl='youtube-dl -t'
 
-#ssh into personal server.
-alias raypi='ssh -p 8081 raytray@ray.7ang.me'
-alias piirssi='ssh -p 8081 raytray@ray.7ang.me -t screen -dr rayirssi'
-
 #Grep running processes
-alias psg='ps ax|grep '
+alias psg='ps ax | grep'
 
 #Grep through history
-alias zhg="history | sed 's/^ *[0-9]* *//' | cat $HISTFILE - | grep "
-
+alias zhg="history | cut -c 8- | grep"
 #Open email compose window with attachment
 alias write-email=write-email-fn
 write-email-fn() {
@@ -137,16 +133,14 @@ export PATH=$PATH:/opt/vagrant/bin
 #emacs as default editor
 alias emacs='emacs -nw'
 export EDITOR='emacs -nw'
-source /home/raytray/Dropbox/Configs/.zprofile
 
-#Cool fun
-alert() {
 #Call alert 1h1m1s to set a 1 hour 1 min 1 second timer.
+alert() {
     google-chrome alrt.io/"$*"
 }
 
-say() {
 #call say string to have it repeat the string back to you using google translate.
+say() {
     if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
 
 alias cd=cdls
