@@ -37,10 +37,10 @@
 (global-set-key (kbd "C-c C-v") 'recompile)
 
 ;; 4 spaces to a tab.
-(setq indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 (setq-default python-indent 4)
 (setq tab-width 4)
+(setq indent-tabs-mode nil)
 (setq tab-stop-list (number-sequence 4 200 4))
 (add-hook 'html-mode-hook
         (lambda ()
@@ -51,9 +51,9 @@
 (require 'highlight-chars)
 (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
 (add-hook 'change-major-mode-hook
-	  (lambda ()
-	    (add-hook 'font-lock-mode-hook
-		      'hc-highlight-trailing-whitespace)))
+          (lambda ()
+            (add-hook 'font-lock-mode-hook
+                      'hc-highlight-trailing-whitespace)))
 
 (require 'package)
 (add-to-list 'package-archives

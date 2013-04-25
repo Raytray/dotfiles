@@ -17,22 +17,22 @@
 [branch]
     autosetuprebase = always
 [branch "master"]
-	rebase = true
+    rebase = true
 [color]
     branch = auto
     diff = auto
     status = auto
     interactive = auto
 [color "branch"]
-       current = yellow reverse
-       local = yellow
-       remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-       whitespace = red reverse
+    whitespace = red reverse
 [color "status"]
-       added = yellow
-       changed = green
-       untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [core]
     excludesfile = /home/raytray/.gitignore_global
 [credential]
