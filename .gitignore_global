@@ -1,3 +1,6 @@
+# virtualenvwrapper plugin
+.venv
+
 # Emacs backups #
 *~
 \#*

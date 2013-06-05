@@ -60,3 +60,4 @@
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
+(put 'upcase-region 'disabled nil)

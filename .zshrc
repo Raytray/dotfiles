@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pip zsh-syntax-highlighting git-extras)
+plugins=(pip zsh-syntax-highlighting git-extras virtualenvwrapper)
 
 DISABLE_AUTO_UPDATE="true"
 
@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 
 setopt no_share_history
 unsetopt correct_all
+unsetopt correct
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -28,9 +29,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #Credit to Nishant 'BinRoot' Shukla.
 cdls() {
     if [ -z "$1" ]; then
-	cd && ls --color=auto -CF
+        cd && ls --color=auto -CF
     else
-	cd "$*" && ls --color=auto -CF
+        cd "$*" && ls --color=auto -CF
     fi
 }
 
@@ -39,6 +40,9 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 source /home/raytray/Dropbox/Configs/.zprofile
 
 alias ls='ls --color=auto -CF'
+
+#brief alias to ntpdate ondemand.
+alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
 
 #alias for defaulting on metric reports for the weather-util program.
 alias weather='weather --metric --alert'
@@ -55,16 +59,16 @@ alias zhg="history | cut -c 8- | grep"
 alias write-email=write-email-fn
 write-email-fn() {
     if [ -z "$1" ]; then
-	thunderbird -compose
+        thunderbird -compose
     else
-	thePWD=`pwd`
-	for var in $@; do
-	    attachment=$attachment','$thePWD'/'$var
-	done
-	unset "thePWD"
-	attachment=`echo $attachment | cut -c 2-`
-	thunderbird -compose "attachment='$attachment'"
-	unset "attachment"
+        thePWD=`pwd`
+        for var in $@; do
+            attachment=$attachment','$thePWD'/'$var
+        done
+        unset "thePWD"
+        attachment=`echo $attachment | cut -c 2-`
+        thunderbird -compose "attachment='$attachment'"
+        unset "attachment"
     fi
 }
 #credit to alrra
@@ -97,9 +101,9 @@ c2f(){
 clipboard(){
     if [ -e $1 ]
     then
-	cat $1 | xclip -selection clipboard
+        cat $1 | xclip -selection clipboard
     else
-	echo $* | xclip -selection clipboard
+        echo $* | xclip -selection clipboard
     fi
 }
 
