@@ -35,7 +35,7 @@
 (global-set-key [f6] 'deft-or-close)
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
-(global-set-key (kbd "RET") 'reindent-then-newline-and-indent)
+(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c t") 'untabify)
 
 ;; 4 spaces to a tab.
