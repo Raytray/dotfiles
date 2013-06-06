@@ -61,14 +61,12 @@ write-email-fn() {
     if [ -z "$1" ]; then
         thunderbird -compose
     else
-        thePWD=`pwd`
+        local thePWD=`pwd`
         for var in $@; do
             attachment=$attachment','$thePWD'/'$var
         done
-        unset "thePWD"
-        attachment=`echo $attachment | cut -c 2-`
+        local attachment=`echo $attachment | cut -c 2-`
         thunderbird -compose "attachment='$attachment'"
-        unset "attachment"
     fi
 }
 #credit to alrra
