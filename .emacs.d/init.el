@@ -38,6 +38,11 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c t") 'untabify)
 
+;;Default modes
+(setq auto-mode-alist
+      (cons '("\\.zsh" . shell-script-mode) auto-mode-alist)
+      )
+
 ;; 4 spaces to a tab.
 (setq-default c-basic-offset 4)
 (setq-default python-indent 4)
