@@ -51,7 +51,7 @@ alias weather='weather --metric --alert'
 alias youtube-dl='youtube-dl -t'
 
 #Grep running processes
-alias psg='ps ax | grep'
+alias psg='ps -ef | grep'
 
 #Grep through history
 alias zhg="history | cut -c 8- | grep"
