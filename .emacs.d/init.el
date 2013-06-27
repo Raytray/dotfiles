@@ -1,6 +1,7 @@
 (setq-default linum-format "%d ")
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
+(add-to-list 'load-path "~/.emacs.d/plugins/scss-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
 (setq auto-mode-alist
