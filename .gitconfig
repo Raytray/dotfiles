@@ -11,7 +11,7 @@
     lsf = ls-files
     lsr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
     lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
-    rb = rebase -i @{u}
+    rb = !git fa && git rebase -i @{u}
     rp = !git rebase -i @{u} && git push
     ss = status -sb
 [branch]
