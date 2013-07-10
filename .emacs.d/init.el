@@ -1,4 +1,5 @@
 (setq-default linum-format "%d ")
+(setq column-number-mode t)
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
@@ -18,7 +19,7 @@
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
                   (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
-(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "j2"))
 (multi-web-global-mode 1)
 
 ;;deft
@@ -46,7 +47,6 @@
 (global-set-key [f6] 'deft-or-close)
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
-(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c t") 'untabify)
 
 ;;Default modes
@@ -63,7 +63,7 @@
 (add-hook 'html-mode-hook
         (lambda ()
           ;; Default indentation is usually 2 spaces, changing to 4.
-          (set (make-local-variable 'sgml-basic-offset) 4)))
+          (set (make-local-variable 'sgml-basic-offset) 2)))
 
 ;; Show whitespace
 (require 'highlight-chars)
