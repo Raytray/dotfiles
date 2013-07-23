@@ -12,6 +12,7 @@
     lsf = ls-files
     lsr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative
     lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
+    update-submodules = !git pull --recurse-submodules && git submodule update
     rb = rebase -i @{u}
     rpush = !git rb && git push
     ss = status -sb
@@ -38,8 +39,6 @@
     excludesfile = /home/raytray/.gitignore_global
 [credential]
     helper = cache
-[fetch]
-    recurseSubmodules = true
 [gist]
     private = no
 [github]
