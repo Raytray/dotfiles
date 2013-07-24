@@ -72,17 +72,7 @@ write-email-fn() {
 #credit to alrra
 calc() {
 
-    local result=""
-
-    result="$( printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n' )"
-    if [[ "$result" == *.* ]]; then
-        # improve the output for decimal numbers
-        printf "$result" | sed -e 's/^\./0./' -e 's/^-\./-0./' -e 's/0*$//;s/\.$//'
-    else
-        printf "$result"
-    fi
-
-    printf "\n"
+    python -c "print $*"
 }
 
 #Fahrenheit to Celsius
