@@ -95,6 +95,8 @@ c2f(){
     calc "$1 * 9.0 / 5.0 + 32.0"
 }
 
+alias calc="noglob calc"
+
 #Copy file or string to clipboard.
 clipboard(){
     if [ -e $1 ]
