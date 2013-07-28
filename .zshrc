@@ -48,7 +48,7 @@ alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
 alias weather='weather --metric --alert'
 
 #alias for youtube-dl to use title as filenames by default.
-alias youtube-dl='youtube-dl -t'
+alias youtube-dl='noglob youtube-dl -t'
 
 #Grep running processes
 alias psg='ps -ef | grep'
@@ -119,6 +119,7 @@ echo -ne '\n'"
 #Virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+export VIRTUAL_ENV_DISABLE_PROMPT="DISABLE"
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 #vagrant
