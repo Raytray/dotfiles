@@ -79,3 +79,4 @@
       "http://marmalade-repo.org/packages/"))
 (package-initialize)
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
