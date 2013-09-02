@@ -140,3 +140,9 @@ say() {
 
 alias cd=cdls
 TRAPINT() { print -n -u2 '^C'; return $((128+$1)) }
+
+#Verbosity!
+alias cp='cp -v'
+alias rm='rm -v'
+alias mv='mv -v'
+alias ln='ln -v'
