@@ -4,7 +4,7 @@
     dfc = !git df --cached
     dw = diff --color-words --patience
     dwc = !git dw --cached
-    fa = fetch --all
+    fa = fetch --all -p
     lgr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
     lgs = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short --graph --all
     llr = log --pretty=format:'%C(bold blue)%H%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --decorate --numstat --date=relative
