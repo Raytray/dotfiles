@@ -106,3 +106,9 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#cd00cd"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#cdcd00"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#e5e5e5")))))
+
+;;autocomplete
+(add-to-list 'load-path "/home/raytray/.emacs.d/plugins/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "/home/raytray/.emacs.d/plugins/auto-complete/ac-dict")
+(ac-config-default)
