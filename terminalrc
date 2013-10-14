@@ -32,8 +32,12 @@ AccelNextTab=<Primary>grave
 TitleMode=TERMINAL_TITLE_PREPEND
 MiscScrollAlternateScreen=TRUE
 BackgroundDarkness=0.800000
-ColorPalette2=#ffff00000000
-ColorPalette5=#38bb44eec85a
+ColorPalette2=#ffff40004000
+ColorPalette5=#19996666ffff
 ColorPalette7=#00008111c67c
 ColorPalette8=#d6b5d6b5d6b5
 ColorPalette13=#000093ffffff
+ColorPalette6=#ffff0000ffff
+TabActivityColor=#ffff00000000
+AccelPrevTab=<Primary><Shift>asciitilde
+
