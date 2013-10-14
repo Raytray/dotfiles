@@ -12,6 +12,12 @@
 (load "git-commit")
 (load "scss-mode")
 (load "less-css-mode")
+(load "rainbow-delimiters")
+(require 'rainbow-delimiters)
+
+(menu-bar-mode -1)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;;multi-web-mode
 (require 'multi-web-mode)
@@ -80,3 +86,23 @@
 (package-initialize)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#0000ee"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#00cdcd"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#cd00cd"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#cdcd00"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#e5e5e5"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#00cdcd"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#cd00cd"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#cdcd00"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#e5e5e5")))))
