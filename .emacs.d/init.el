@@ -4,6 +4,9 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins//hideshow-org")
+(require 'hideshow-org)
+
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist)
       )
@@ -18,6 +21,7 @@
 (menu-bar-mode -1)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'hs-org/minor-mode)
 
 ;;multi-web-mode
 (require 'multi-web-mode)
@@ -54,6 +58,7 @@
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
 (global-set-key (kbd "C-c t") 'untabify)
+(global-set-key "\C-ch" 'hs-org/minor-mode)
 
 ;;Default modes
 (setq auto-mode-alist
@@ -106,9 +111,3 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#cd00cd"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#cdcd00"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#e5e5e5")))))
-
-;;autocomplete
-(add-to-list 'load-path "/home/raytray/.emacs.d/plugins/auto-complete")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/home/raytray/.emacs.d/plugins/auto-complete/ac-dict")
-(ac-config-default)
