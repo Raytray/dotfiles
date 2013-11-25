@@ -16,6 +16,7 @@
     rb = rebase -i @{u}
     rba = rebase --abort
     rbc = rebase --continue
+    rbs = rebase --skip
     ss = status -sb
     unstage = reset HEAD
     update-submodules = !git pull --recurse-submodules && git submodule update
