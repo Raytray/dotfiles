@@ -21,7 +21,6 @@
 (menu-bar-mode -1)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook 'hs-org/minor-mode)
 
 ;;multi-web-mode
 (require 'multi-web-mode)
@@ -30,7 +29,7 @@
                   (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "j2"))
-(multi-web-global-mode 1)
+(multi-web-global-mode 0)
 
 ;;deft
 (load "deft")
