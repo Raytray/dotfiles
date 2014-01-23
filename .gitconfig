@@ -1,4 +1,5 @@
 [alias]
+    ba = branch --all -vv
     cv = commit --verbose
     df = diff --patience
     dfc = !git df --cached
