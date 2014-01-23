@@ -111,3 +111,17 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#cd00cd"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#cdcd00"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#e5e5e5")))))
+
+;; Prevent the cursor from blinking
+(blink-cursor-mode 0)
+;; Don't use messages that you don't read
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+;; Don't let Emacs hurt your ears
+(setq visible-bell t)
+
+;; You need to set `inhibit-startup-echo-area-message' from the
+;; customization interface:
+;; M-x customize-variable RET inhibit-startup-echo-area-message RET
+;; then enter your username
+(setq inhibit-startup-echo-area-message "guerry")
