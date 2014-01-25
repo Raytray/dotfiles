@@ -125,3 +125,19 @@
 ;; M-x customize-variable RET inhibit-startup-echo-area-message RET
 ;; then enter your username
 (setq inhibit-startup-echo-area-message "guerry")
+
+;;Hide-Show with Ruby
+(defun ruby-custom-setup ()
+; [other stuff omitted...]
+  (add-to-list 'hs-special-modes-alist
+                      '(ruby-mode
+                         "\\(def\\|do\\)"
+                          "end"
+                           "#"
+                            (lambda (arg) (ruby-end-of-block))
+                             nil
+                             ))
+  (hs-minor-mode t)
+)
+
+(add-hook 'ruby-mode-hook 'ruby-custom-setup)
