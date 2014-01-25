@@ -1,12 +1,15 @@
 (setq-default linum-format "%d ")
 (setq column-number-mode t)
-(setq uniquify-buffer-name-style 'forward)
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins//hideshow-org")
 (require 'hideshow-org)
+
+;;Uniquify buffer names
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode) auto-mode-alist)
