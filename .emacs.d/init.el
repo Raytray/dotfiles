@@ -4,8 +4,10 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
-(add-to-list 'load-path "~/.emacs.d/plugins//hideshow-org")
+(add-to-list 'load-path "~/.emacs.d/plugins/hideshow-org")
+(add-to-list 'load-path "~/.emacs.d/plugins/highlight-indentation")
 (require 'hideshow-org)
+(require 'highlight-indentation)
 
 ;;Uniquify buffer names
 (require 'uniquify)
