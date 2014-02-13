@@ -3,41 +3,32 @@
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/deft")
-(add-to-list 'load-path "~/.emacs.d/plugins/markdown-mode")
 (add-to-list 'load-path "~/.emacs.d/plugins/hideshow-org")
-(add-to-list 'load-path "~/.emacs.d/plugins/csharp-mode")
-(add-to-list 'load-path "~/.emacs.d/plugins/highlight-indentation")
 (require 'hideshow-org)
-(require 'highlight-indentation)
 
 ;;Uniquify buffer names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(setq auto-mode-alist
-      (cons '("\\.md" . markdown-mode) auto-mode-alist)
-      )
 (load "jinja")
-(load "markdown-mode")
-(load "csharp-mode")
-(load "git-commit")
-(load "scss-mode")
-(load "less-css-mode")
-(load "rainbow-delimiters")
-(require 'rainbow-delimiters)
 
 (menu-bar-mode -1)
 
+;;Add csharp-mode to prog-mode
+(defvar prog-mode-hook nil)
+(defun prog-mode-setup ()
+  (run-hooks 'prog-mode-hook))
+(add-hook 'csharp-mode-hook 'prog-mode-setup)
+(provide 'prog-mode)
+
+;;Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-;;multi-web-mode
-(require 'multi-web-mode)
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
                   (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "j2"))
-(multi-web-global-mode 0)
 
 ;;deft
 (load "deft")
