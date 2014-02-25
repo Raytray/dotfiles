@@ -2,9 +2,12 @@
 (setq column-number-mode t)
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/plugins/")
-(add-to-list 'load-path "~/.emacs.d/plugins/deft")
 (add-to-list 'load-path "~/.emacs.d/plugins/hideshow-org")
+(add-to-list 'load-path "~/.emacs.d/plugins/deft")
+(add-to-list 'load-path "~/.emacs.d/plugins/column-enforce-mode")
 (require 'hideshow-org)
+(require 'column-enforce-mode)
+
 
 ;;Uniquify buffer names
 (require 'uniquify)
@@ -23,6 +26,9 @@
 
 ;;Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;;Load column enforce on prog-mode
+(add-hook 'prog-mode-hook 'column-enforce-mode)
 
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
