@@ -146,3 +146,6 @@ alias cp='cp -v'
 alias rm='rm -v'
 alias mv='mv -v'
 alias ln='ln -v'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
