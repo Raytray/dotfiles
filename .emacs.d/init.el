@@ -7,8 +7,14 @@
 (require 'hideshow-org)
 (require 'column-enforce-mode)
 
+;; Markdown mode
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;Uniquify buffer names
+
+;; Uniquify buffer names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
@@ -16,17 +22,17 @@
 
 (menu-bar-mode -1)
 
-;;Add csharp-mode to prog-mode
+;; Add csharp-mode to prog-mode
 (defvar prog-mode-hook nil)
 (defun prog-mode-setup ()
   (run-hooks 'prog-mode-hook))
 (add-hook 'csharp-mode-hook 'prog-mode-setup)
 (provide 'prog-mode)
 
-;;Load rainbow delimiters on prog-mode
+;; Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-;;Load column enforce on prog-mode
+;; Load column enforce on prog-mode
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 
 (setq mweb-default-major-mode 'html-mode)
@@ -35,13 +41,13 @@
                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "j2"))
 
-;;Keybindings
+;; Keybindings
 (global-set-key (kbd "C-c v") 'compile)
 (global-set-key (kbd "C-c C-v") 'recompile)
 (global-set-key (kbd "C-c t") 'untabify)
 (global-set-key "\C-ch" 'hs-org/minor-mode)
 
-;;Default modes
+;; Default modes
 (setq auto-mode-alist
       (cons '("\\.zsh" . shell-script-mode) auto-mode-alist)
       )
@@ -77,7 +83,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -95,21 +101,19 @@
 
 ;; Prevent the cursor from blinking
 (blink-cursor-mode 0)
+
 ;; Don't use messages that you don't read
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
+
 ;; Don't let Emacs hurt your ears
 (setq visible-bell t)
 
-;; You need to set `inhibit-startup-echo-area-message' from the
-;; customization interface:
-;; M-x customize-variable RET inhibit-startup-echo-area-message RET
-;; then enter your username
-(setq inhibit-startup-echo-area-message "guerry")
+(setq inhibit-startup-echo-area-message "Raytray")
 
-;;Hide-Show with Ruby
+;; Hide-Show with Ruby
 (defun ruby-custom-setup ()
-; [other stuff omitted...]
+;; [other stuff omitted...]
   (add-to-list 'hs-special-modes-alist
                       '(ruby-mode
                          "\\(def\\|do\\)"
