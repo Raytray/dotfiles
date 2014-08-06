@@ -45,7 +45,7 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = /home/raytray/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [credential]
     helper = cache
 [gist]
