@@ -34,6 +34,7 @@
 
 ;; Load column enforce on prog-mode
 (add-hook 'prog-mode-hook 'column-enforce-mode)
+(setq column-enforce-column 100)
 
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
