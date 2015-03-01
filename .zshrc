@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 setopt no_share_history
 unsetopt correct_all
 unsetopt correct
-
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -36,7 +36,6 @@ cdls() {
 }
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 source /home/raytray/Dropbox/Configs/.zprofile
 
 alias ls='ls --color=auto -CF'
@@ -148,4 +147,4 @@ alias mv='mv -v'
 alias ln='ln -v'
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
