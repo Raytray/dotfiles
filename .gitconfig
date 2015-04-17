@@ -5,7 +5,7 @@
     dfc = !git df --cached
     dw = diff --color-words --patience
     dwc = !git dw --cached
-    fa = fetch --all -p
+    fa = fetch --all -pv
     lgg = !git lsr | grep
     lggl = !git lls | grep
     lgr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
@@ -17,7 +17,6 @@
     lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
     lsi = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=iso
     mnc = merge --no-commit
-    myinit = !git init && lolcommits --enable --fork
     rb = rebase -i @{u}
     rba = rebase --abort
     rbc = rebase --continue
