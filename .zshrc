@@ -146,3 +146,6 @@ alias ln='ln -v'
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
+
+## Java Home
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
