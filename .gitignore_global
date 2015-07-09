@@ -100,3 +100,6 @@ Thumbs.db
 *.vrb
 *.xdy
 *.tdo
+
+#Bower components
+bower_components
