@@ -56,8 +56,9 @@
 ;; 4 spaces to a tab.
 (setq-default c-basic-offset 4)
 (setq-default python-indent 4)
+(setq sgml-basic-offset 4)
 (setq tab-width 4)
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq tab-stop-list (number-sequence 4 200 4))
 (add-hook 'html-mode-hook
         (lambda ()
