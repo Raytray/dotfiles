@@ -19,8 +19,8 @@
 ;;; Commentary:
 ;;
 ;; Command line utility sass is required, see http://sass-lang.com/
-;; To install sass (haml):
-;; gem install haml
+;; To install sass:
+;; gem install sass
 ;;
 ;; Also make sure sass location is in emacs PATH, example:
 ;; (setq exec-path (cons (expand-file-name "~/.gem/ruby/1.8/bin") exec-path))
@@ -43,7 +43,7 @@
   \"~/.gem/ruby/1.8/bin/sass\""
   :group 'scss)
 
-(defcustom scss-compile-at-save t
+(defcustom scss-compile-at-save nil
   "If not nil the SCSS buffers will be compiled after each save"
   :type 'boolean
   :group 'scss)
@@ -51,6 +51,11 @@
 (defcustom scss-sass-options '()
   "Command line Options for sass executable, for example:
 '(\"--cache-location\" \"'/tmp/.sass-cache'\")"
+  :group 'scss)
+
+(defcustom scss-output-directory nil
+  "Output directory for compiled files, for example:
+\"../css\""
   :group 'scss)
 
 (defcustom scss-compile-error-regex '("\\(Syntax error:\s*.*\\)\n\s*on line\s*\\([0-9]+\\) of \\([^, \n]+\\)" 3 2 nil nil 1)
@@ -62,8 +67,7 @@ HYPERLINK HIGHLIGHT)"
 
 (defconst scss-font-lock-keywords
   ;; Variables
-  '(("$[a-z_-][a-z-_0-9]*" . font-lock-constant-face)
-    ("//.*$" . font-lock-comment-face)))
+  '(("$[a-z_-][a-z-_0-9]*" . font-lock-constant-face)))
 
 (defun scss-compile-maybe()
   "Runs `scss-compile' on if `scss-compile-at-save' is t"
@@ -71,11 +75,13 @@ HYPERLINK HIGHLIGHT)"
       (scss-compile)))
 
 (defun scss-compile()
-  "Compiles the current buffer, sass filename.scss filename.css"
+  "Compiles the directory belonging to the current buffer, using the --update option"
   (interactive)
-  (compile (concat scss-sass-command " " (mapconcat 'identity scss-sass-options " ") " "
-                   "'" buffer-file-name "' '"
-                   (first (split-string buffer-file-name "[.]scss$")) ".css'")))
+  (compile (concat scss-sass-command " " (mapconcat 'identity scss-sass-options " ") " --update "
+                   (when (string-match ".*/" buffer-file-name)
+                     (concat "'" (match-string 0 buffer-file-name) "'"))
+                   (when scss-output-directory
+                     (concat ":'" scss-output-directory "'")))))
 
 ;;;###autoload
 (define-derived-mode scss-mode css-mode "SCSS"
@@ -83,6 +89,11 @@ HYPERLINK HIGHLIGHT)"
 Special commands:
 \\{scss-mode-map}"
   (font-lock-add-keywords nil scss-font-lock-keywords)
+  ;; Add the single-line comment syntax ('//', ends with newline)
+  ;; as comment style 'b' (see "Syntax Flags" in elisp manual)
+  (modify-syntax-entry ?/ ". 124" css-mode-syntax-table)
+  (modify-syntax-entry ?* ". 23b" css-mode-syntax-table)
+  (modify-syntax-entry ?\n ">" css-mode-syntax-table)
   (add-to-list 'compilation-error-regexp-alist scss-compile-error-regex)
   (add-hook 'after-save-hook 'scss-compile-maybe nil t))
 
