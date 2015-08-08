@@ -52,20 +52,7 @@ alias psg='ps -ef | grep'
 
 #Grep through history
 alias zhg="history | cut -c 8- | grep"
-#Open email compose window with attachment
-alias write-email=write-email-fn
-write-email-fn() {
-    if [ -z "$1" ]; then
-        thunderbird -compose
-    else
-        local thePWD=`pwd`
-        for var in $@; do
-            attachment=$attachment','$thePWD'/'$var
-        done
-        local attachment=`echo $attachment | cut -c 2-`
-        thunderbird -compose "attachment='$attachment'"
-    fi
-}
+
 #credit to alrra
 calc() {
 

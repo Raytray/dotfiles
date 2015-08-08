@@ -25,10 +25,6 @@ bashrc is not listed as I use zshrc instead.
 * ```ps ax | grep```
 * ```history | cut -c 8- | grep```
 
-#### Launching Thunderbird Compose Window
-* Takes any arguments as an attachment (Easier to specify files than to remember email addresses)
-* TODO: Allow email addresses to be specified as parameters as well. (If argument is not found, and is validated as address, use as target address)
-
 #### Calc
 * Credit to [alrra](https://github.com/alrra)
 * Basic calculator with additional improvements to formatting output of decimal numbers.
