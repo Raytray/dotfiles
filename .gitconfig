@@ -1,5 +1,6 @@
 [alias]
     ba = branch --all -vv
+    bp = !git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d
     cv = commit --verbose
     df = diff --patience
     dfc = !git df --cached
