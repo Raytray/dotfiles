@@ -73,6 +73,11 @@
             (add-hook 'font-lock-mode-hook
                       'hc-highlight-trailing-whitespace)))
 
+;; Highlight characters past 80
+(require 'whitespace)
+ (setq whitespace-style '(face empty tabs lines-tail trailing))
+ (global-whitespace-mode t)
+
 (require 'package)
 (add-to-list 'package-archives
     '("marmalade" .
