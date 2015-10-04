@@ -5,7 +5,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/hideshow-org")
 (add-to-list 'load-path "~/.emacs.d/plugins/column-enforce-mode")
 (require 'hideshow-org)
-(require 'column-enforce-mode)
 
 ;; Markdown mode
 (autoload 'markdown-mode "markdown-mode"
@@ -31,10 +30,6 @@
 
 ;; Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; Load column enforce on prog-mode
-(add-hook 'prog-mode-hook 'column-enforce-mode)
-(setq column-enforce-column 100)
 
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
