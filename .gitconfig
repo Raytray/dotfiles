@@ -63,3 +63,5 @@
 [user]
     name = Raymond Tang
     email = raymond@tang.me
+[commit]
+	template = /home/raytray/.git_commit_msg.txt
