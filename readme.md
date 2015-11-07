@@ -3,7 +3,10 @@ Raymond Tang's dotfiles
 
 My gitconfig has a few changes for colors, as well as aliases for more ease of use.  
 xkbevd is for bell beeps. My systems do not contain an actual pcspkr, thus I use aplay and xkbevd to catch events and emit a short beep.  
-bashrc is not listed as I use zshrc instead.  
+bashrc is not listed as I use zshrc instead.
+
+## Git Hooks
+* A folder for common git-hooks that I use on more than a single project
 
 ## ZSH Aliases
 
