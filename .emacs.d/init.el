@@ -31,6 +31,13 @@
 ;; Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+;; Highlight characters past 80
+(require 'whitespace)
+ (setq whitespace-style '(face empty tabs lines-tail trailing))
+(add-hook 'prog-mode-hook
+          (function (lambda ()
+                      (whitespace-mode t))))
+
 ;; setup Web mode
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
@@ -68,11 +75,6 @@
           (lambda ()
             (add-hook 'font-lock-mode-hook
                       'hc-highlight-trailing-whitespace)))
-
-;; Highlight characters past 80
-(require 'whitespace)
- (setq whitespace-style '(face empty tabs lines-tail trailing))
- (global-whitespace-mode t)
 
 (require 'package)
 (add-to-list 'package-archives
