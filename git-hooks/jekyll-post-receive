@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+GIT_REPO=$HOME/raysite.git
+TEMP_REPOSITORY=$HOME/raysite-deploy-temp
+PUBLIC_WWW=/var/www/raysite
+
+git clone $GIT_REPO $TEMP_REPOSITORY
+/home/raytray/.rvm/gems/ruby-2.2.1/wrappers/jekyll build -s $TEMP_REPOSITORY -d $PUBLIC_WWW
+rm -Rf $TEMP_REPOSITORY
+exit
