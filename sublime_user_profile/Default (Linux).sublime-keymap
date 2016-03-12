@@ -1,0 +1,6 @@
+[
+    {"keys": ["ctrl+x", "ctrl+c"], "command": "close"},
+    {"keys": ["ctrl+/"], "command": "undo"},
+    {"keys": ["ctrl+tab"], "command": "sbp_pane_cmd", "args": {"cmd": "switch_tab", "direction": "right"}},
+    {"keys": ["ctrl+shift+tab"], "command": "sbp_pane_cmd", "args": {"cmd": "switch_tab", "direction": "left"}},
+]
