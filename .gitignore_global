@@ -103,3 +103,6 @@ Thumbs.db
 
 #Bower components
 bower_components
+
+#Node packages
+node_modules
