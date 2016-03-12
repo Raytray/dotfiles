@@ -100,6 +100,9 @@ sleep 1
 echo -ne '     ┻━ ︵╰(°Д°)╯︵ ━┻              \r'
 echo -ne '\n'"
 
+# Woohoo
+alias woohoo='mplayer -really-quiet -loop 0 ~/Dropbox/woohoo.mp3'
+
 #Virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
