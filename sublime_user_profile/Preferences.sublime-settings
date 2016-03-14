@@ -1,7 +1,7 @@
 {
+	"draw_white_space": "all",
 	"ignored_packages":
 	[
 		"Vintage"
-	],
-	"draw_white_space": "all"
+	]
 }
