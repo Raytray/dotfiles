@@ -4,13 +4,18 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/hideshow-org")
 (add-to-list 'load-path "~/.emacs.d/plugins/column-enforce-mode")
+(add-to-list 'load-path "~/.emacs.d/plugins/textmate.el")
 (require 'hideshow-org)
+(require 'textmate)
 
 ;; Markdown mode
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; c-mode for ino files
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
 
 
 ;; Uniquify buffer names
@@ -30,6 +35,9 @@
 
 ;; Load rainbow delimiters on prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; Load textmate on prog-mode
+(add-hook 'prog-mode-hook 'textmate-mode)
 
 ;; Highlight characters past 80
 (require 'whitespace)
