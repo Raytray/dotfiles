@@ -7,6 +7,7 @@
     dw = diff --color-words --patience
     dwc = !git dw --cached
     fa = fetch --all -pv
+    gr = "!f() { cd ${GIT_PREFIX:-.}; git grep -l $1 | xargs sed -i s/$1/$2/g; }; f"
     lgg = !git lsr | grep
     lggl = !git lls | grep
     lgr = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=relative --graph --all
