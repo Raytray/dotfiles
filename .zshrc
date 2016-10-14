@@ -138,4 +138,4 @@ alias ln='ln -v'
 #export PATH="/usr/local/heroku/bin:$PATH"
 
 ## Java Home
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
