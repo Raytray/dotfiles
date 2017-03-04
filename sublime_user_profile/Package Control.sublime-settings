@@ -6,9 +6,10 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"Emacs Pro Essentials",
 		"Package Control",
+		"Pretty JSON",
 		"SideBarEnhancements",
-		"Smart Match",
-		"sublemacspro"
+		"Smart Match"
 	]
 }

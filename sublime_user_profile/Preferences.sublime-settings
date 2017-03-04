@@ -5,7 +5,8 @@
 		"build",
 		".gradle",
 		"dist",
-		"node_modules"
+		"node_modules",
+		".git"
 	],
 	"font_size": 10,
 	"ignored_packages":
