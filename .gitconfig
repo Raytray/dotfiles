@@ -7,7 +7,7 @@
     dfc = !git df --cached
     dw = diff --color-words --patience
     dwc = !git dw --cached
-    fa = fetch --all -pv
+    fa = fetch --all --prune --tags --verbose
     gr = "!f() { cd ${GIT_PREFIX:-.}; git grep -l $1 | xargs sed -i s/$1/$2/g; }; f"
     lgg = !git lsr | grep
     lggl = !git lls | grep
