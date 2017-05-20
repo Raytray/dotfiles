@@ -9,6 +9,7 @@
 		".git"
 	],
 	"font_size": 10,
+	"font_options": ["no_italics"],
 	"ignored_packages":
 	[
 		"Vintage"
