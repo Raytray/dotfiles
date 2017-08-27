@@ -8,8 +8,11 @@
 		"node_modules",
 		".git"
 	],
+	"font_options":
+	[
+		"no_italics"
+	],
 	"font_size": 10,
-	"font_options": ["no_italics"],
 	"ignored_packages":
 	[
 		"Vintage"
