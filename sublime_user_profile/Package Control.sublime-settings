@@ -7,10 +7,12 @@
 	[
 		"BracketHighlighter",
 		"Emacs Pro Essentials",
+		"HTMLBeautify",
 		"Package Control",
 		"Pretty JSON",
 		"SideBarEnhancements",
 		"Smart Match",
-		"SyncedSideBar"
+		"SyncedSideBar",
+		"TrailingSpaces"
 	]
 }
