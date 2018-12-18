@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pip git-extras mvn virtualenvwrapper zsh-syntax-highlighting)
+plugins=(pip git-extras mvn zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,7 +21,7 @@ setopt no_share_history
 unsetopt correct_all
 unsetopt correct
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.local/bin # Add RVM to PATH for scripting, add python to path
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #Credit to Nishant 'BinRoot' Shukla.
@@ -53,24 +53,6 @@ alias psg='ps -ef | grep'
 #Grep through history
 alias zhg="history | cut -c 8- | grep"
 
-#credit to alrra
-calc() {
-
-    python -c "print $*"
-}
-
-#Fahrenheit to Celsius
-f2c(){
-    calc "($1 - 32.0) * 5.0 / 9.0"
-}
-
-#Celsius to Fahrenheit
-c2f(){
-    calc "$1 * 9.0 / 5.0 + 32.0"
-}
-
-alias calc="noglob calc"
-
 #Copy file or string to clipboard.
 clipboard(){
     if [ -e $1 ]
@@ -81,32 +63,8 @@ clipboard(){
     fi
 }
 
-#Google given string
-google(){
-    searchTerm=`echo $* | sed -e 's/ /\+/g'`
-    searchTerm='https://www.google.com/search?q='$searchTerm
-    google-chrome $searchTerm
-    unset 'searchTerm'
-}
-
-alias fliptable="echo -ne '    ┬─┬﻿ ノ( °-°ノ)   \r'
-sleep 1
-echo -ne '           (╯°□°）╯︵ ┻━┻           \r'
-sleep 1
-echo -ne '           (ノ°Д°)ノ  ︵  ┬─┬       \r'
-sleep 1
-echo -ne '           (ノ°□°)ノ   ︵   ︵  ┻━┻ \r'
-sleep 1
-echo -ne '     ┻━ ︵╰(°Д°)╯︵ ━┻              \r'
-echo -ne '\n'"
-
-# Woohoo
-alias woohoo='mplayer -really-quiet -loop 0 ~/Dropbox/woohoo.mp3'
-
 #Virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-export VIRTUAL_ENV_DISABLE_PROMPT="DISABLE"
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 #vagrant
