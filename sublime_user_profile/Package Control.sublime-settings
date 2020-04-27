@@ -2,15 +2,19 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Pretty JSON",
+		"TrailingSpaces"
 	],
 	"installed_packages":
 	[
+		"AutoPEP8",
 		"BracketHighlighter",
 		"Emacs Pro Essentials",
-		"Hermes",
+		"Helium",
 		"HTMLBeautify",
 		"Package Control",
 		"Pretty JSON",
+		"Python Breakpoints",
 		"SideBarEnhancements",
 		"Smart Match",
 		"SyncedSideBar",

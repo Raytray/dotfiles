@@ -105,3 +105,6 @@ bower_components
 
 #Node packages
 node_modules
+
+#python notebook
+.ipynb_checkpoints
