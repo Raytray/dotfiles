@@ -38,15 +38,6 @@ source /home/raytray/Dropbox/Configs/.zprofile
 
 alias ls='ls --color=auto -CF'
 
-#brief alias to ntpdate ondemand.
-alias ntpdatethis='sudo ntpdate 0.north-america.pool.ntp.org'
-
-#alias for defaulting on metric reports for the weather-util program.
-alias weather='weather --metric --alert'
-
-#alias for youtube-dl to use title as filenames by default.
-alias youtube-dl='noglob youtube-dl -t'
-
 #Grep running processes
 alias psg='ps -ef | grep'
 
@@ -63,37 +54,14 @@ clipboard(){
     fi
 }
 
-#Virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-
-#vagrant
-export PATH=$PATH:/opt/vagrant/bin
-
 #emacs as default editor
 alias emacs='emacs -nw'
 export EDITOR='emacs -nw'
 
-#Call alert 1h1m1s to set a 1 hour 1 min 1 second timer.
-alert() {
-    google-chrome alrt.io/"$*"
-}
-
-#call say string to have it repeat the string back to you using google translate.
-say() {
-    if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
-
 alias cd=cdls
-TRAPINT() { print -n -u2 '^C'; return $((128+$1)) }
 
 #Verbosity!
 alias cp='cp -v'
 alias rm='rm -v'
 alias mv='mv -v'
 alias ln='ln -v'
-
-### Added by the Heroku Toolbelt
-#export PATH="/usr/local/heroku/bin:$PATH"
-
-## Java Home
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
