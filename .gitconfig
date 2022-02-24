@@ -2,6 +2,8 @@
     ba = branch --all -vv
     bl = branch -vv
     bp = !git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d
+    cbb = "!f() { git checkout -b bugfix/JIRA-$1;}; f"
+    cbf = "!f() { git checkout -b feature/JIRA-$1;}; f"
     cv = commit --verbose
     df = diff --patience
     dfc = !git df --cached
