@@ -1,4 +1,0 @@
-Bell() shell "(if [ ! -e /run/lock/bell_playing ];
-       then touch /run/lock/bell_playing;
-       paplay /usr/share/sounds/beep-7.wav;
-       rm /run/lock/bell_playing; fi ) &"
