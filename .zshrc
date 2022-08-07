@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pip git-extras mvn gradle zsh-syntax-highlighting)
+plugins=(pip git-extras mvn gradle zsh-syntax-highlighting virtualenv virtualenvwrapper)
 
 zstyle ':omz:update' mode auto
 
@@ -61,3 +61,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+export VIRTUALENVWRAPPER_PYTHON=python3
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/repositories
+source /usr/local/bin/virtualenvwrapper.sh
