@@ -1,0 +1,14 @@
+#!/bin/sh
+
+git stash --keep-index
+
+RESULT=0
+
+if git diff --cached --name-only --diff-filter=ACMR | grep ".gradle\|.groovy"
+then
+  ./gradlew spotlessApply check
+  RESULT = $?
+fi
+
+git stash pop
+exit $RESULT
