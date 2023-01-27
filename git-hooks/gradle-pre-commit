@@ -1,13 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 git stash --keep-index
 
 RESULT=0
 
-if git diff --cached --name-only --diff-filter=ACMR | grep ".gradle\|.groovy"
+if git diff --cached --name-only --diff-filter=ACMR | grep ".gradle\|.java\|.groovy"
 then
-  ./gradlew spotlessApply check
-  RESULT = $?
+  HOOK_DIR=$(git rev-parse --show-toplevel)
+  cd $HOOK_DIR/services
+./gradlew :spotlessCheck || RESULT=$?
 fi
 
 git stash pop
