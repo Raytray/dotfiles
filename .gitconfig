@@ -2,6 +2,7 @@
     ba = branch --all -vv
     bl = branch -vv
     bp = !git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d
+    bps = "!f() { local targetBranch=${1:-develop}; git checkout -q $targetBranch && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse \"$branch^{tree}\") -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done;}; f"
     cbb = "!f() { git checkout -b bugfix/JIRA-$1;}; f"
     cbf = "!f() { git checkout -b feature/JIRA-$1;}; f"
     cv = commit --verbose
