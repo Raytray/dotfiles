@@ -21,6 +21,7 @@
     lss = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=short
     lsi = log --pretty=format:'%C(bold blue)%h%C(reset)%C(yellow) - %C(white)(%ad)%C(reset) %Cred%d %C(bold white)%s%C(reset) %C(white)— %an' --abbrev-commit --decorate --date=iso
     mnc = merge --no-commit
+    praise = blame -w -C -C -C
     rb = rebase -i @{u}
     rba = rebase --abort
     rbc = rebase --continue
@@ -69,3 +70,5 @@
 	directory = *
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true
