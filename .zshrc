@@ -13,10 +13,13 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pip git-extras mvn gradle zsh-syntax-highlighting virtualenv virtualenvwrapper)
+plugins=(pip git-extras gradle zsh-syntax-highlighting python docker docker-compose)
 
 zstyle ':omz:update' mode auto
 
+PYTHON_AUTO_VRUN=TRUE
+PYTHON_VENV_NAME=".venv"
+PYTHON_VENV_NAMES=($PYTHON_VENV_NAME venv)
 source $ZSH/oh-my-zsh.sh
 
 setopt no_share_history
