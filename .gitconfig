@@ -29,8 +29,6 @@
     update-submodules = !git pull --recurse-submodules && git submodule update
 [branch]
     autosetuprebase = always
-[branch "master"]
-    rebase = true
 [color]
     branch = auto
     diff = auto

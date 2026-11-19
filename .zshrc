@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -13,11 +12,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pip git-extras gradle zsh-syntax-highlighting python docker docker-compose)
+plugins=(pip git-extras gradle zsh-syntax-highlighting docker docker-compose python tmux)
 
 zstyle ':omz:update' mode auto
 
-PYTHON_AUTO_VRUN=TRUE
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+PYTHON_AUTO_VRUN=true
 PYTHON_VENV_NAME=".venv"
 PYTHON_VENV_NAMES=($PYTHON_VENV_NAME venv)
 source $ZSH/oh-my-zsh.sh
@@ -55,7 +55,6 @@ alias rm='rm -v'
 alias mv='mv -v'
 alias ln='ln -v'
 
-
 alias python=python3
 
 export NVM_DIR="$HOME/.nvm"
@@ -65,7 +64,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-export VIRTUALENVWRAPPER_PYTHON=python3
-export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/repositories
-source /usr/local/bin/virtualenvwrapper.sh
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
+
+. "$HOME/.local/bin/env"

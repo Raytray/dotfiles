@@ -1,50 +1,47 @@
 Raymond Tang's dotfiles
 =======================
 
-My gitconfig has a few changes for colors, as well as aliases for more ease of use.  
-xkbevd is for bell beeps. My systems do not contain an actual pcspkr, thus I use aplay and xkbevd to catch events and emit a short beep.  
-bashrc is not listed as I use zshrc instead.
+My gitconfig has a few changes for colors, as well as aliases for more ease of use.
 
 ## Git Hooks
 * A folder for common git-hooks that I use on more than a single project
 
-## ZSH Aliases
+## ZSH
 
-#### Aliases for Default Flags
-* ```ls --color=auto -CF```
-    * Use colors, columns, and display indicators to filetype (Folder, executable, symlink, etc)
-* ```weather --metric --alert```
-    * Displays weather in metric and also display any alerts for given argument.
-* ```youtube-dl```
-    * Downloads youtube with title flag attached.
-* ```emacs -nw```
-    * Call emacs in no window mode.
+Uses [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (my fork is included as a submodule) with the custom `ray` theme (`ray.zsh-theme`).
+
+#### oh-my-zsh settings
+* Plugins: `pip`, `git-extras`, `gradle`, `zsh-syntax-highlighting`, `docker`, `docker-compose`, `python`, `tmux`
+* Extra completions from [zsh-completions](https://github.com/zsh-users/zsh-completions) (installed as a custom plugin)
+* Auto-updates oh-my-zsh (`zstyle ':omz:update' mode auto`)
+* Shows red dots while waiting for completion
+* Auto-activates Python virtualenvs named `.venv` or `venv` when entering a directory (`PYTHON_AUTO_VRUN`)
+
+#### Shell options
+* `no_share_history`: each session keeps its own history
+* Autocorrect (`correct`, `correct_all`) is turned off
 
 #### cd -> cdls()
 * Credit to [BinRoot](https://github.com/binroot)
-* Immediately lists contents of the current directory after changing into a new directory
+* Immediately lists contents of the directory after changing into it. `cd` with no argument goes home and lists it.
 
-#### History and Process search.
-* ```ps ax | grep```
-* ```history | cut -c 8- | grep```
+#### Aliases for Default Flags
+* `ls --color=auto -CF`
+    * Use colors, columns, and display indicators to filetype (Folder, executable, symlink, etc)
+* `emacs -nw`
+    * Call emacs in no window mode. Also set as `$EDITOR`.
+* `cp -v`, `rm -v`, `mv -v`, `ln -v`
+    * Verbose output for file operations.
+* `python` -> `python3`
 
-#### Calc
-* Credit to [alrra](https://github.com/alrra)
-* Basic calculator with additional improvements to formatting output of decimal numbers.
-* Fahrenheit to Celsius and Celsius to Fahrenheit aliases based off of this.
+#### History and Process search
+* `psg` -> `ps -ef | grep`
+* `zhg` -> `history | cut -c 8- | grep`
 
-#### Clipboard
-* Quick alias to copy file or string into clipboard.
-
-#### Google
-* Quick alias to launch a google search on given string.
-
-#### fliptable
-* Relieve some stress by watching a small ascii animation flip tables.
-
-#### alert
-* Launches alrt.io with arguments to set a timer based on given parameters.
-
-#### say
-* Credit to [commandlinefu.com & marrowsuck](http://www.commandlinefu.com/commands/view/9629/google-text-to-speech-in-local-language-or-language-of-choice)
-* Google text-to-speech in your local language or in language of choice via country code switch (ISO 639-1).
+#### Language tooling
+* [nvm](https://github.com/nvm-sh/nvm) for Node.js (loaded from `~/.nvm`, with bash completion)
+* [rbenv](https://github.com/rbenv/rbenv) and ruby-build for Ruby
+* Maven from `/opt/maven` (`M2_HOME`, `MAVEN_HOME`)
+* [opencode](https://opencode.ai) on `PATH` from `~/.opencode/bin`
+* Sources `~/.local/bin/env` (added by the [uv](https://docs.astral.sh/uv/) installer to put `~/.local/bin` on `PATH`)
+* `PROJECT_HOME` set to `~/repositories`
